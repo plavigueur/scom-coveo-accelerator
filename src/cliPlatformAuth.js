@@ -68,7 +68,7 @@ async function promptForOptions() {
 async function promptForSourceOptions() {
     let answers = {};
 
-    const firstScreen = await inquirer([{
+    const firstScreen = await inquirer.prompt([{
         type: 'list',
         name: 'advancedIndexing',
         message: 'Will you create a dedicated Coveo org for this project (includes entitlements and custom pricing in search results, but increases complexity of deployment)',
