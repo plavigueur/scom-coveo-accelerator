@@ -76,7 +76,7 @@ async function promptForSourceOptions() {
         default: CHOICES.no
     }]);
 
-    if (firstScreen.advancedIndexing) {
+    if (firstScreen.advancedIndexing == CHOICES.yes) {
         answers = await inquirer.prompt([{
             type: 'string',
             name: 'customOrgId',
@@ -222,7 +222,7 @@ async function createSalesforceSource(refreshTokenGUID, accessToken, options, so
     try {
         console.log(chalk.white.bold('\nCreating Salesforce source... this may take a few minutes'));
 
-        const extensionId = createGetCommerceRelationshipsExtension(sourceOptions.customOrgId, sourceOptions.customAccessToken);
+        // const extensionId = createGetCommerceRelationshipsExtension(sourceOptions.customOrgId, sourceOptions.customAccessToken);
 
         const guid = crypto.randomUUID();
         [{ key: `client_id_${guid}`, value: options.clientID }, { key: `client_secret_${guid}`, value: options.clientSecret }].forEach(async (kv) => {
