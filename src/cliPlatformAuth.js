@@ -285,7 +285,7 @@ async function createSalesforceSource(refreshTokenGUID, accessToken, options, so
             return;
         }
     } catch (e) {
-        console.log(chalk.red.bold(`[ERROR] ${error?.code}: ${error?.message}`));
+        console.log(chalk.red.bold(`[ERROR] ${e}: ${e?.message}`));
         return;
     }
 }
